@@ -1,0 +1,45 @@
+<h1>New accountbook</h1>
+
+<%= form_for(@accountbook) do |f| %>
+  <div class="field">
+    text_field<br />
+    <%= f.text_field :subject, {:size => 50, :maxlength => 100, :read_only => true} %>
+  </div>
+  <div class="field">
+    password_field<br />
+    <%= f.password_field :price, { :size => 20 } %>
+  </div>
+  <div class="field">
+    text_area<br />
+    <%= f.text_area  :date, { :cols => 40, :rows => 5 } %>
+  </div>
+  <div class="field">
+    radio_button<br />
+    <div><label><%= f.radio_button  :subject, 'one' %> one </label></div>
+    <div><label><%= f.radio_button  :subject, 'two' %> two </label></div>
+    <div><label><%= f.radio_button  :subject, 'three' %> three </label></div>
+  </div>
+  
+  <div class="field">
+    check_box<br />
+    <div><label><%= f.check_box  :subject, {'one' , 'no'} %>Are you sure?</label></div>
+  </div>
+  
+  <div class="field">
+    number_field<br />
+    <div><%= f.number_field  :subject, {:step => 10, :size => 5} %></div>
+  </div>
+  
+  
+  <div class="actions">
+    <%= f.submit nil, {:confirm => 'Are you ready to submit?', :disable_with => 'Processing...'} %>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+<%= link_to 'Back', accountbooks_path %>

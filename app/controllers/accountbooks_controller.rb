@@ -32,6 +32,34 @@ class AccountbooksController < ApplicationController
     end
   end
 
+  # GET /accountbooks/newformtag
+  def newformtag
+    @accountbook = Accountbook.new
+
+    respond_to do |format|
+      format.html # newformtag.html.erb
+      format.xml  { render :xml => @accountbook }
+    end
+  end
+  
+  # GET /accountbooks/formelement
+  def formelement
+    @accountbook = Accountbook.new
+
+    respond_to do |format|
+      format.html # formelement.html.erb
+      format.xml  { render :xml => @accountbook }
+    end
+  end
+
+  # GET /accountbooks/helper
+  def helper
+    respond_to do |format|
+      format.html # formelement.html.erb
+      format.xml  { render :xml => @accountbook }
+    end
+  end
+
   # GET /accountbooks/1/edit
   def edit
     @accountbook = Accountbook.find(params[:id])
@@ -80,4 +108,6 @@ class AccountbooksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+
 end

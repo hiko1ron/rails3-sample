@@ -1,4 +1,8 @@
-<%= form_for(@accountbook) do |f| %>
+<h1>New accountbook</h1>
+
+Example of form_tag() helper (for create)
+
+<%= form_tag({:action=>'create'}) do %>
   <% if @accountbook.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@accountbook.errors.count, "error") %> prohibited this accountbook from being saved:</h2>
@@ -12,19 +16,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :subject %><br />
-    <%= f.text_field :subject %>
+    <%= label :accountbook, :subject %><br />
+    <%= text_field :accountbook, :subject %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
+    <%= label :accountbook, :price %><br />
+    <%= text_field :accountbook, :price %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
-    <%= f.date_select :date %>
+    <%= label :accountbook, :date %><br />
+    <%= date_select :accountbook, :date %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag '更新' %>
   </div>
 <% end %>
 
+
+<%= link_to 'Back', accountbooks_path %>

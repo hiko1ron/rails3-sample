@@ -1,6 +1,12 @@
 Todotest::Application.routes.draw do
 
-  resources :accountbooks
+  get "accountbooks/newformtag"
+  get "accountbooks/formelement"
+  get "accountbooks/helper"
+
+  resources :accountbooks do
+    
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -52,7 +58,7 @@ Todotest::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
-  root :to => "todos#index"
+  root :to => "accountbooks#index"
 
   # See how all your routes lay out with "rake routes"
 

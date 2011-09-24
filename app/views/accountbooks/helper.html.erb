@@ -1,0 +1,72 @@
+<h1>String Helper sample</h1>
+
+<h2>truncate</h2>
+<div class="field">
+	<%= truncate 'text ' * 30, {:length => 30}%>
+</div>
+
+<h2>excerpt</h2>
+<div class="field">
+	<%= excerpt '雨ニモマケズ風ニモマケズ雪ニモ夏ノ暑サニモマケヌ丈夫ナカラダヲモチ慾ハナク', '丈夫', {:radius => 5}%>
+</div>
+
+
+
+<h2>auto_link</h2>
+<div class="field">
+	<%= raw auto_link 'オフィシャルサイトのURLは http://bbt.ac/ です。', {:html => {:target => ':blank'}} %>
+</div>
+
+
+
+<h2>highlight</h2>
+<div class="field">
+	<%= highlight '雨ニモマケズ風ニモマケズ雪ニモ夏ノ暑サニモマケヌ丈夫ナカラダヲモチ慾ハナク'
+	, ['ニモ']
+	, :highlighter => '<strong class="highlight">\1</strong>' %>
+</div>
+
+
+
+<h2>link_to</h2>
+<div class="field">
+	<%= link_to 'BBT', 'http://bbt.ac/' %><br />
+	<%= link_to 'top', {:controller => 'accountbooks', :action => 'index'} %><br />
+	<%= link_to 'record 1', accountbook_path(1) %><br />
+</div>
+
+
+
+<h2>image_tag</h2>
+<div class="field">
+	<%= image_tag 'http://farm5.static.flickr.com/4006/4423062788_d228f18f45_s.jpg',
+	{:size => 75, :mouseover => 'http://farm5.static.flickr.com/4028/4422297307_2608650695_s.jpg', :alt => 'Ebisu'} %>
+</div>
+
+
+
+
+<h2>debug</h2>
+<div class="field">
+	<% testvar = Accountbook.find(1) %>
+	<%= debug(testvar) %>
+</div>
+
+<h2>render</h2>
+<div class="field">
+	<% image_hash = [
+		{:title => 'Air plane', :url => 'http://farm4.static.flickr.com/3171/2667157949_37c974ebde_s.jpg'},
+		{:title => 'Las Vegas', :url => 'http://farm4.static.flickr.com/3273/2667246581_eea381c1b5_s.jpg'},
+		{:title => 'Sight',     :url => 'http://farm4.static.flickr.com/3004/2668103824_e907aaf015_s.jpg'}
+	] %>
+	<%= render 'image', :image => image_hash[2] %>
+	<%= render 'image', :image => image_hash[1] %>
+	<%= render 'image', :image => image_hash[1] %>
+	<%= render 'image', :image => image_hash[0] %>
+	<%= render 'image', :image => image_hash[0] %>
+	
+	<div style="clear: both"></div>
+</div>
+
+
+<%= link_to 'Back', accountbooks_path %>
