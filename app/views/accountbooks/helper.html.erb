@@ -21,9 +21,9 @@
 
 <h2>highlight</h2>
 <div class="field">
-	<%= highlight '雨ニモマケズ風ニモマケズ雪ニモ夏ノ暑サニモマケヌ丈夫ナカラダヲモチ慾ハナク'
-	, ['ニモ']
-	, :highlighter => '<strong class="highlight">\1</strong>' %>
+	<%= highlight '雨ニモマケズ風ニモマケズ雪ニモ夏ノ暑サニモマケヌ丈夫ナカラダヲモチ慾ハナク',
+	['ニモ'] ,
+	:highlighter => '<strong class="highlight">\1</strong>' %>
 </div>
 
 
@@ -40,7 +40,11 @@
 <h2>image_tag</h2>
 <div class="field">
 	<%= image_tag 'http://farm5.static.flickr.com/4006/4423062788_d228f18f45_s.jpg',
-	{:size => 75, :mouseover => 'http://farm5.static.flickr.com/4028/4422297307_2608650695_s.jpg', :alt => 'Ebisu'} %>
+	{
+		:size => 75,
+		:mouseover => 'http://farm5.static.flickr.com/4028/4422297307_2608650695_s.jpg',
+		:alt => 'Ebisu'
+	} %>
 </div>
 
 

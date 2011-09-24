@@ -22,10 +22,10 @@
   
   <div class="field">
     check_box<br />
-    <div><label><%= f.check_box  :subject, {'one' , 'no'} %>Are you sure?</label></div>
+    <div><label><%= f.check_box  :subject, {}, 'yes' , 'no' %>Are you sure?</label></div>
   </div>
   
-  <div class="field">
+  <div class="field">5
     number_field<br />
     <div><%= f.number_field  :subject, {:step => 10, :size => 5} %></div>
   </div>
