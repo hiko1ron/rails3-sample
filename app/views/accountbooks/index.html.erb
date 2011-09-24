@@ -1,7 +1,10 @@
 <h1>Listing accountbooks</h1>
 
+
+Total <%= @accountbooks_count %> records. Spent <%= @accountbooks_sum %> yen. 
 <table>
   <tr>
+    <th>ID</th>
     <th>Subject</th>
     <th>Price</th>
     <th>Date</th>
@@ -14,6 +17,7 @@
 -->
 <% @accountbooks.each do |accountbook| %>
   <tr>
+    <td><%= accountbook.id %></td>
     <td><%= accountbook.subject %></td>
     <td><%= accountbook.price %></td>
     <td><%= accountbook.date %></td>
@@ -27,9 +31,15 @@
 <br />
 
 <%= link_to 'New Accountbook', new_accountbook_path %>
-<span style="background-color: #FCC;">
 <%= link_to 'New Accountbook with form_tag', {:action => 'newformtag'} %>
 <%= link_to 'New Accountbook with form_tag', {:action => 'formelement'} %>
 <%= link_to 'helper sample', {:action => 'helper'} %>
-</span>
+
+<h2>Statistics</h2>
+<div style="background-color: #FCC;">
+<ul>
+	<li><%= link_to 'Total per day', {:action => 'total_per_day'} %></li>
+	<li><%= link_to 'Average consumption per subject', {:action => 'average_per_subject'} %></li>
+</ul>
+</div>
 

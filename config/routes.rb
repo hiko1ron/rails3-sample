@@ -3,6 +3,8 @@ Todotest::Application.routes.draw do
   get "accountbooks/newformtag"
   get "accountbooks/formelement"
   get "accountbooks/helper"
+  get "accountbooks/average_per_subject"
+  get "accountbooks/total_per_day"
 
   resources :accountbooks do
     

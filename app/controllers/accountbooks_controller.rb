@@ -3,11 +3,23 @@ class AccountbooksController < ApplicationController
   # GET /accountbooks.xml
   def index
     @accountbooks = Accountbook.all
+    @accountbooks_count = Accountbook.count
+    @accountbooks_sum   = Accountbook.sum('price')
     
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @accountbooks }
     end
+  end
+
+  def total_per_day
+    @accountbooks = Accountbook.select('SUM(price) as price, date').group('date')
+    render 'accountbooks/total_per_day'
+  end  
+  
+  def average_per_subject
+    @accountbooks = Accountbook.select('AVG(price) as avg_price, subject').group('subject').order('date desc')
+    render 'accountbooks/average_per_subject'
   end
 
   # GET /accountbooks/1
