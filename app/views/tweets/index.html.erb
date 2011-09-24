@@ -1,0 +1,20 @@
+<h1>Listing tweets</h1>
+
+
+<%= render 'form' %>
+
+
+<table>
+  <tr>
+    <th>Tweet</th>
+    <th>Date</th>
+    <th></th>
+  </tr>
+
+<% @tweets.each do |tweet| %>
+  <tr>
+    <td><%= tweet.tweet %></td>
+    <td><%= tweet.create_at %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Subject:</b>
+  <%= @accountbook.subject %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @accountbook.price %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @accountbook.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_accountbook_path(@accountbook) %> |
+<%= link_to 'Back', accountbooks_path %>

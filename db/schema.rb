@@ -10,12 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110821024118) do
+ActiveRecord::Schema.define(:version => 20110923173842) do
 
-  create_table "todos", :force => true do |t|
-    t.datetime "limit"
-    t.string   "title"
-    t.text     "detail"
+  create_table "accountbooks", :force => true do |t|
+    t.string   "subject"
+    t.integer  "price"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tweets", :force => true do |t|
+    t.string   "tweet"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

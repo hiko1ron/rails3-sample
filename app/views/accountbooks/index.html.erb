@@ -1,0 +1,29 @@
+<h1>Listing accountbooks</h1>
+
+<table>
+  <tr>
+    <th>Subject</th>
+    <th>Price</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<!--
+<%= debug @accountbooks %>
+-->
+<% @accountbooks.each do |accountbook| %>
+  <tr>
+    <td><%= accountbook.subject %></td>
+    <td><%= accountbook.price %></td>
+    <td><%= accountbook.date %></td>
+    <td><%= link_to 'Show', accountbook %></td>
+    <td><%= link_to 'Edit', edit_accountbook_path(accountbook) %></td>
+    <td><%= link_to 'Destroy', accountbook, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Accountbook', new_accountbook_path %>

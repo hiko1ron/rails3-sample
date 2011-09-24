@@ -1,0 +1,61 @@
+<%= form_for(@accountbook) do |f| %>
+  <% if @accountbook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@accountbook.errors.count, "error") %> prohibited this accountbook from being saved:</h2>
+
+      <ul>
+      <% @accountbook.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+<%= form_tag({:action=>'create'}) do %>
+  <% if @accountbook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@accountbook.errors.count, "error") %> prohibited this accountbook from being saved:</h2>
+
+      <ul>
+      <% @accountbook.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= label :accountbook, :subject %><br />
+    <%= text_field :accountbook, :subject %>
+  </div>
+  <div class="field">
+    <%= label :accountbook, :price %><br />
+    <%= text_field :accountbook, :price %>
+  </div>
+  <div class="field">
+    <%= label :accountbook, :date %><br />
+    <%= date_select :accountbook, :date %>
+  </div>
+  <div class="actions">
+    <%= submit_tag '更新' %>
+  </div>
+<% end %>
